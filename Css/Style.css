@@ -1,0 +1,136 @@
+body {
+  width: 100%;
+  height: 100%;
+  background: url(../Assets/maps.png) repeat;
+  image-rendering: pixelated;
+}
+
+.Character {
+  transition: transform 0.4s;
+}
+
+.Character.you {
+  z-index: 1;
+}
+
+.Character.you .Character_you-arrow {
+  display: block;
+}
+
+.Character_you-arrow {
+  display: none;
+  position: absolute;
+  top: -18px;
+  left: 2px;
+  width: 7px;
+  height: 5px;
+  background: url(../Assets/arrow.png) no-repeat no-repeat;
+}
+
+.Character_sprite {
+  overflow: hidden;
+  top: -3px;
+  background: url(../Assets/chewie.png) no-repeat no-repeat;
+  width: 45px;
+  height: 70px;
+}
+
+.Character[data-direction="left"] .Character_sprite {
+  background-position-x: 3px;
+  background-position-y: -77px;
+  animation: left 1s infinite steps(1);
+}
+
+.Character[data-direction="right"] .Character_sprite {
+  background-position-x: 3px;
+  background-position-y: -146px;
+  animation: right 1s infinite steps(1);
+}
+
+.Character[data-direction="up"] .Character_sprite {
+  background-position-x: 3px;
+  background-position-y: -222px;
+  animation: up 1s infinite steps(1);
+}
+
+.Character[data-direction="down"] .Character_sprite {
+  background-position-x: 1px;
+  background-position-y: -7px;
+  animation: down 1s infinite steps(1);
+}
+
+.Character_name-container {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  font-size: 5px;
+  padding: 1px 2px 1px;
+  border-radius: 3px;
+  background: #333;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.player-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  align-items: flex-end;
+}
+
+@keyframes left {
+  0% {
+    background-position-x: -77px;
+  }
+  50% {
+    background-position-x: -120px;
+  }
+  100% {
+    background-position-x: -180px;
+  }
+}
+
+@keyframes right {
+  0% {
+    background-position-y: -146px;
+  }
+  50% {
+    background-position-x: -37px;
+  }
+  100% {
+    background-position-x: -20px;
+  }
+}
+
+@keyframes up {
+  0% {
+    background-position-y: -224px;
+    background-position-x: 1px;
+  }
+  25% {
+    background-position-x: -36px;
+  }
+  50% {
+    background-position-x: -77px;
+  }
+  100% {
+    background-position-x: -115px;
+  }
+}
+
+@keyframes down {
+  0% {
+    background-position-y: -3px;
+  }
+  50% {
+    background-position-x: -38px;
+  }
+  100% {
+    background-position-x: -76px;
+  }
+}
